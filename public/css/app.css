@@ -1,7 +1,14 @@
 #app  {
   margin: 3%;
 }
-
+html {
+  background: url(../image/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+  
+}
 header {
   margin-top: 10px;
   text-align: center;
@@ -76,4 +83,10 @@ header {
 
 form {
   margin-bottom: 2rem;
+}
+
+.is-4 {
+  height: 85vh;
+  overflow-y: scroll;
+  max-height: 100vh;
 }
