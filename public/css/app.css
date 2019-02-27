@@ -1,0 +1,79 @@
+#app  {
+  margin: 3%;
+}
+
+header {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.item-list {
+  padding: .7rem;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #f5f5f5;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all .2s;
+
+}
+.type {
+  color: #363636;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.125;
+}
+.all {
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #f5f5f5;
+  margin-bottom: .8rem;
+  padding: 10px 0 ;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.all h3 {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.balance p, .income p  {
+  color: #23d160;
+}
+
+.expense p{
+  color: #ff005b;
+}
+
+.item-list.completed * {
+    color: lightgray;
+}
+
+
+.item-list .title,
+.item-list .type,
+.item-list .textfield {
+    margin-right: auto;
+}
+
+.item-list .textfield {
+    display: none;
+}
+
+.item-list.editing .checkbox,
+.item-list.editing .type,
+.item-list.editing .title {
+    display: none;
+}
+
+.item-list.editing .textfield {
+    display: block;
+    flex: 1;
+    margin-right: 16px;
+}
+
+form {
+  margin-bottom: 2rem;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Finance App</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="title is-2">Finance App</h1>
+    </header>
+    <main id="app" >
+
+      <div class="columns">
+        <div class="column is-3 ">
+          <form id="amount-form">
+            <div class="field">
+              <div class="control">
+                <input id="add-input-amount" type="number" placeholder="Amount" class="input">
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input id="add-input-body" type="text" placeholder="Description" class="input">
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <input id="add-input-date" type="text" placeholder="Date" class="input" >
+              </div>
+            </div>
+            <div class="select">
+              <select id="add-input-type">
+                 <option value="+" >+</option>
+                 <option value="-" >-</option>
+               </select>
+           </div>
+            <button id="add-button" type="submit" class="button is-success">Добавить</button>
+          </form>
+          <div class="all balance">
+            <h3 >Balance</h3>
+            <p id='balance'>+12500</p>
+          </div>
+          <div class="all income">
+            <h3 >All income</h3>
+            <p id="income">+25000</p>
+          </div>
+          <div class="all expense">
+            <h3 >All expense</h3>
+            <p id="expense">-12500</p>
+          </div>
+        </div>
+      <div class="column is-1 ">
+      </div>
+      <div class="column is-4 ">
+        <ul id="income-list">
+        </ul>
+      </div>
+      <div class="column is-4 ">
+        <ul id="expense-list">
+        </ul>
+      </div>
+    </div>
+    </main>
+    <script src="js/app.js"></script>
+  </body>
+</html>

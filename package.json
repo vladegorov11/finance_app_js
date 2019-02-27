@@ -1,0 +1,19 @@
+{
+  "name": "finance-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "main": "webpack.config.js",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {}
+}
