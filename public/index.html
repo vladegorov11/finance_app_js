@@ -8,16 +8,20 @@
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
   <body>
     <header>
       <h1 class="title is-2 has-text-white">Finance App</h1>
     </header>
     <main id="app" >
-
       <div class="columns">
         <div class="column is-3 ">
-          <form id="amount-form">
+          <form id="amount-form" class="amount-form">
             <div class="field">
               <div class="control">
                 <input id="add-input-amount" type="number" placeholder="Amount" class="input">
@@ -44,6 +48,9 @@
           <div class="all balance">
             <h3 >Balance</h3>
             <p id='balance'>+12500</p>
+            <i class="material-icons chart-icon" id="BtnModal">
+              insert_chart_outlined
+            </i>
           </div>
           <div class="all income">
             <h3 >All income</h3>
@@ -66,6 +73,15 @@
           </ul>
       </div>
     </div>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id='close'>&times;</span>
+        <p>Beautiful Chart  coming soon</p>
+        <canvas id="myChart" width="400" height="400"></canvas>
+      </div>
+    </div>
+
     </main>
     <script src="js/app.js"></script>
   </body>
