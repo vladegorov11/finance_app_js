@@ -5,6 +5,7 @@ class Model extends EventEmitter {
         super();
 
         this.items = items;
+        console.log(this.items);
     }
 
     getItem(id) {

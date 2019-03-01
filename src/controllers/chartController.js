@@ -2,7 +2,6 @@ class ChartController {
     constructor(model, view) {
         this.model = model;
         this.view = view;
-
         view.on('chartCreate', this.createChart.bind(this));
     }
 
