@@ -1,6 +1,6 @@
 import { EventEmitter } from '../helpers/helpers';
 
-class Model extends EventEmitter {
+class Model  extends EventEmitter {
     constructor(items = []) {
         super();
 

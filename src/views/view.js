@@ -1,4 +1,5 @@
 import { EventEmitter, createElement } from '../helpers/helpers';
+import { validationForm } from '../helpers/validationHelper';
 
 class View extends EventEmitter {
     constructor() {
@@ -18,8 +19,8 @@ class View extends EventEmitter {
         const typeLabel = createElement('label', { className: 'type' }, amount.type);
         const label = createElement('label', { className: 'title' },  amount.amount);
         const editInput = createElement('input', { type: 'text', className: 'textfield input' });
-        const editButton = createElement('button', { className: 'edit button  is-warning is-small is-pulled-right' }, 'Изменить');
-        const deleteButton = createElement('button', { className: 'remove button  is-danger is-small is-pulled-right' }, 'Удалить');
+        const editButton = createElement('button', { className: 'edit button  is-warning is-small is-pulled-right' }, 'Edit');
+        const deleteButton = createElement('button', { className: 'remove button  is-danger is-small is-pulled-right' }, 'Remove');
         const description = createElement('p', { className: '' }, amount.body);
         const date = createElement('p', { className: 'is-pulled-right' }, amount.date);
         const item = createElement('li', { className: `item-list is-clearfix`, 'data-id': amount.id }, typeLabel, label, editInput, editButton, deleteButton, description, date);
@@ -45,7 +46,6 @@ class View extends EventEmitter {
     handleAdd(event) {
         event.preventDefault();
         console.log(this.inputType.options[this.inputType.selectedIndex].value);
-        if (!this.inputAmount.value) return alert('Необходимо ввести название задачи.');
 
         const value = {
           date: this.inputDate.value,
@@ -53,8 +53,9 @@ class View extends EventEmitter {
           type: this.inputType.options[this.inputType.selectedIndex].value,
           body: this.inputBody.value
         }
-
-        this.emit('add', value);
+        if (validationForm(this) ) {
+          this.emit('add', value);
+        }
     }
 
 
@@ -70,7 +71,7 @@ class View extends EventEmitter {
             this.emit('edit', { id, amount });
         } else {
             input.value = label.textContent;
-            editButton.textContent = 'Сохранить';
+            editButton.textContent = 'Save';
             listItem.classList.add('editing');
         }
     }
@@ -115,7 +116,7 @@ class View extends EventEmitter {
         const editButton = listItem.querySelector('button.edit');
 
         label.textContent = amount.amount;
-        editButton.textContent = 'Изменить';
+        editButton.textContent = 'Edit';
         listItem.classList.remove('editing');
     }
 
